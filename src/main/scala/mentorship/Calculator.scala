@@ -1,6 +1,10 @@
 package mentorship
 
-case class Calculator(num: Int) {
+trait Number {
+  def num: Int
+}
+
+case class Calculator(num: Int) extends Number {
 
   def divide: PartialFunction[Int, Any] = compute orElse exception
 
